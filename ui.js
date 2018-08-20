@@ -13,33 +13,16 @@ class Ui{
 
 
     paint(weather){
-        this.location.textContent = weather.main.name;
-
-
-
-        //  weather = [{
-        //     "id":804,
-        //     "main":"clouds",
-        //     "description":"overcast clouds","icon":"04n"
-        // }];
-
-
-        // this.desc.textContent = 'Weather description ' + weather;
-        this.desc.textContent = 'Weather description ' + weather;
-
-        // let weather = [{
-        //     "id":804,
-        //     "main":"clouds",
-        //     "description":"overcast clouds","icon":"04n"
-        // }];
-
-
-        this.string.textContent = (weather.main.temp - 273).toFixed(1); // to Celsius
-        // this.icon.setAttribute('src', 'weather[0].icon');
+        this.location.textContent = weather.name;
+        this.desc.textContent = weather.weather[0].description;
+        //to Celsius
+        this.string.textContent = 'Temperature: ' + (weather.main.temp - 273).toFixed(1);    
+        this.icon.setAttribute('src', `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`);
+        
         this.humidity.textContent = `Relative humidity: ${weather.main.humidity}`;
         this.fellslike.textContent = 'Good';
-        this.dewpoint.textContent = '40';
-        this.wind.textContent = weather.wind.speed;
+        this.dewpoint.textContent = 'Dewp oint: ' + '40';
+        this.wind.textContent = 'Wind speed: ' + weather.wind.speed + ' m/sec';
 
 
     }
