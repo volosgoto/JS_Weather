@@ -1,12 +1,9 @@
 class Ui {
     constructor() {
         this.location = document.getElementById('w-location');
+        this.country = document.getElementById('w-country');
         this.desc = document.getElementById('w-desc');
         this.string = document.getElementById('w-string');
-
-        // this.stringMax = document.getElementById('w-stringMax');
-        // this.stringMin = document.getElementById('w-stringMin');
-
         this.icon = document.getElementById('w-icon');
 
         // this.details = document.getElementById('w-details');
@@ -18,10 +15,11 @@ class Ui {
 
 
     paint(weather) {
-        //     // Wether location city
+        // Wether location
         this.location.textContent = weather.name;
+        this.country.textContent = weather.sys.country;
 
-        // Weather deskription
+        // Weather description
         let wd = weather.weather[0].description;
         this.desc.textContent = (function() {
             return wd[0].toUpperCase() + wd.slice(1);
@@ -29,8 +27,6 @@ class Ui {
 
         //to Celsius
         this.string.textContent = 'Temperature: ' + (weather.main.temp - 273).toFixed(1);
-        // this.stringMax.textContent = 'Max: ' + (weather.main.temp_max - 273).toFixed(1);
-        // this.stringMin.textContent = 'Min: ' + (weather.main.temp_min - 273).toFixed(1);
 
         // Pressure
         let mmhg = 0.750062;
