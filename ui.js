@@ -25,13 +25,14 @@ class Ui {
             return wd[0].toUpperCase() + wd.slice(1);
         })(wd);
 
-        //to Celsius
+
+        //Temperature to Celsius
         this.string.textContent = 'Temperature: ' + (weather.main.temp - 273).toFixed(1);
 
         // Pressure
         let mmhg = 0.750062;
         let pressureConvert = mmhg;
-        this.pressure.textContent = 'Pressure: ' + (weather.main.pressure * mmhg).toFixed(1) + ' mmhg';
+        this.pressure.textContent = 'Pressure: ' + (weather.main.pressure * mmhg).toFixed(1) + ' ' + 'mmhg';
 
         // Add weather-icon
         let imgUrl = `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
