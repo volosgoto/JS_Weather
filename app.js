@@ -1,6 +1,16 @@
 // Init
-let weather = new Weather('Kiev', 'ua');
+let storage = new Storage();
 let ui = new Ui();
+
+// Get location data
+let weatherLocation = storage.getLocationData();
+
+// Init Weather obj
+let weather = new Weather(weatherLocation.city, weatherLocation.state);
+// console.log(weather);
+
+
+
 
 
 // Get wether on DOM load
@@ -13,7 +23,9 @@ document.querySelector('#w-change-btn').addEventListener('click', e => {
 
     // Set new location
     weather.changeLocation(city, state)
-	
+
+    // Set location from local storage
+    storage.setLocationData(city, state);
 
 	// Get and display weather
 	getWeather();
