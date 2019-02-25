@@ -1,0 +1,12 @@
+{
+  "name": "JS_Weather",
+  "homepage": "https://volosgoto.github.io/JS_Weather/",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/volosgoto/JS_Weather.git",
+  "author": "volosgoto <volosgoto@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
